@@ -39,7 +39,6 @@ h1 {
 }
 
 .card {
-    border:2px solid red;
     width: 28%;
     height: 50%;
     position: relative;
@@ -47,12 +46,7 @@ h1 {
     transform-style: preserve-3d;
     transition: transform .2s;
 }
-.dummy-div{
-    border:2px solid blue;
-    width:177px;
-    height:200px;
-    background-color: red;
-}
+
 .card:active{
     transform: scale(.95);
 }
@@ -116,22 +110,5 @@ h1 {
     margin:0 auto;
     margin-top: 20px;
 }
-
-/* .front{
-    visibility: hidden;
-} */
-
-/* .front{
-    visibility: hidden;
-} */
-
-/* .back{
-    visibility: initial;
-}
-
-.hidefront > div{
-    visibility: hidden;
-} */
-
 
 

@@ -6,14 +6,13 @@ let lock_board = false;
 let score = 0;
 const score_html=document.getElementById('curr-score');
 
+
 // Select all element with class "card" and store them in cards
 const cards = document.querySelectorAll('.card');
 
 //A function that will flip the card when its clicked 
 function flip() {
-
     if (lock_board) return;
-
     this.classList.toggle('flip'); //"this" refers to the element that activated the flip function in the first place
     if (!hasFlippedCard) {
         //this is the first click on the card, no previous cards where clicked to compare the two
@@ -29,12 +28,13 @@ function flip() {
         //comparison of the two cards
         if (first_card_flipped.dataset.name === second_card_flipped.dataset.name) {
             //the two cards matched 
+            score+=5;
+            score_html.innerHTML=score;
             first_card_flipped.removeEventListener('click', flip);
             second_card_flipped.removeEventListener('click', flip);
             console.log("heree " + first_card_flipped);
             console.log("heree " + first_card_flipped.style.backgroundColor);
-            score+=5;
-            score_html.innerHTML=score;
+
 
             // const main = document.getElementById('main');
             // const original = document.getElementByid('operation1');
@@ -66,11 +66,3 @@ cards.forEach(card => card.addEventListener('click', flip));
 
 
 
-
-
-
-
-
-
-// Add a $ to (this), i.e. $(this).
-// Inside your event handler, this refers to the original DOM object (HTMLDivElement, as the error states), not a jQuery object. Wrapping it using $() will make the css() method available because now the underlying DOM object is contained in a jQuery wrapper that exposes other functionality.
