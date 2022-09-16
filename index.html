@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="/styles/style.css" />
+
+</head>
+
+<body>
+
+    <!-- Title -->
+    <div class="title">
+        <h1>Memory Game</h1>
+    </div>
+
+    </div>
+    <!-- Cards -->
+    <div class="cards-container">
+
+        <!-- card -->
+        <div id="1" class="card hide-front" data-name="java">
+            <img class="front-img" src="/images/java-logo.png">
+            <img class="back-img" src="/images/question-mark.webp">
+        </div>
+        <!-- card -->
+        <div id="2" class="card" data-name="C++">
+            <img class="front-img" src="/images/c--logo.png">
+            <img class="back-img" src="/images/question-mark.webp">
+        </div>
+        <!-- card -->
+        <div id="3" class="card" data-name="python">
+            <img class="front-img" src="/images/python-logo.png">
+            <img class="back-img" src="/images/question-mark.webp">
+        </div>
+
+        <!-- card -->
+        <div id="4" class="card hide-front" data-name="python">
+            <img class="front-img" src="/images/python-logo.png">
+            <img class="back-img" src="/images/question-mark.webp">
+        </div>
+        <!-- card -->
+        <div id="5" class="card hide-front" data-name="java">
+            <img class="front-img" src="/images/java-logo.png">
+            <img class="back-img" src="/images/question-mark.webp">
+        </div>
+        <!-- card -->
+        <div id="6" class="card hide-front" data-name="C++">
+            <img class="front-img" src="/images/c--logo.png">
+            <img class="back-img" src="/images/question-mark.webp">
+        </div>
+    </div>
+
+    <!-- score -->
+    <div class="score-container">
+        <div class="score">
+            <p>Score:<span id="curr-score">0</span></p>
+        </div>
+
+        <div class="reset-container">
+            <button id="reset" class="reset-btn" onclick="location.reload()">Reset</button>
+        </div>
+    </div>
+
+    <!-- description -->
+    <div class="description">
+        <p>You gain 5 points if the cards match, and lose 10 otherwise. Good luck!</p>
+    </div>
+
+
+
+    <script src="script.js" type="text/javascript"></script>
+
+</body>
+
+</html>
