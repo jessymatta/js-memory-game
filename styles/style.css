@@ -28,9 +28,10 @@ h1 {
 }
 
 .cards-container {
-    width: 40vw;
-    height: 35vh;
+    width: 600px;
+    height: 400px;
     display: flex;
+    /* flex-direction: column; */
     flex-wrap: wrap;
     margin: 0 auto;
     perspective: 1000px;
@@ -38,6 +39,7 @@ h1 {
 }
 
 .card {
+    border:2px solid red;
     width: 28%;
     height: 50%;
     position: relative;
@@ -45,7 +47,12 @@ h1 {
     transform-style: preserve-3d;
     transition: transform .2s;
 }
-
+.dummy-div{
+    border:2px solid blue;
+    width:177px;
+    height:200px;
+    background-color: red;
+}
 .card:active{
     transform: scale(.95);
 }
@@ -101,6 +108,13 @@ h1 {
 
 .front-img{
     transform: rotateY(180deg);
+}
+
+.description{
+    width:35%;
+    font-size: 20px;
+    margin:0 auto;
+    margin-top: 20px;
 }
 
 /* .front{

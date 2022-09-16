@@ -2,8 +2,9 @@ console.log("working???");
 
 let hasFlippedCard = false;
 let first_card_flipped, second_card_flipped;
-let lock_board=false;
-let score=0;
+let lock_board = false;
+let score = 0;
+const score_html=document.getElementById('curr-score');
 
 // Select all element with class "card" and store them in cards
 const cards = document.querySelectorAll('.card');
@@ -23,34 +24,38 @@ function flip() {
     else {
         // the user is clicking on the second card and a comparision is needed
         hasFlippedCard = false;
-        second_card_flipped = this; 
+        second_card_flipped = this;
 
         //comparison of the two cards
         if (first_card_flipped.dataset.name === second_card_flipped.dataset.name) {
             //the two cards matched 
             first_card_flipped.removeEventListener('click', flip);
             second_card_flipped.removeEventListener('click', flip);
-            // rgb(82, 201, 23)
-            console.log("heree "+first_card_flipped);
-            console.log("heree "+first_card_flipped.style.backgroundColor);
-            setTimeout(() =>{
-            first_card_flipped.remove();
-            second_card_flipped.remove();
-            },500);
-            // $(first_card_flipped).css({'background-color': 'red'});
-            // this.style.backgroundColor="rgb(82, 201, 23)";
+            console.log("heree " + first_card_flipped);
+            console.log("heree " + first_card_flipped.style.backgroundColor);
+            score+=5;
+            score_html.innerHTML=score;
 
+            // const main = document.getElementById('main');
+            // const original = document.getElementByid('operation1');
+            // const clone = original.cloneNode(true);
 
+            setTimeout(() => {
+                first_card_flipped.remove();
+                second_card_flipped.remove();
+            }, 500);
         }
-        else{
+        else {
             //the two cards did not match
-            lock_board=true;
-            setTimeout(() =>{//delays the flipping to be able to see the contents of the card
-            first_card_flipped.classList.remove('flip');
-            second_card_flipped.classList.remove('flip');
-            lock_board=false;
-        },500);
-    }
+            lock_board = true;
+            score-=10;
+            score_html.innerHTML=score;
+            setTimeout(() => {//delays the flipping to be able to see the contents of the card
+                first_card_flipped.classList.remove('flip');
+                second_card_flipped.classList.remove('flip');
+                lock_board = false;
+            }, 500);
+        }
     }
 }
 
