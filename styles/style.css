@@ -43,9 +43,10 @@ h1 {
     height: 50%;
     position: relative;
     margin: 10px;
+}
 
-
-
+.card:active{
+    transform: scale(.97);
 }
 
 .front-img,
