@@ -34,6 +34,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
+    perspective: 1000px;
 
 }
 
@@ -43,6 +44,8 @@ h1 {
     height: 50%;
     position: relative;
     margin: 10px;
+    transform-style: preserve-3d;
+    transition: transform .5s;
 }
 
 .card:active{
@@ -71,6 +74,10 @@ h1 {
 }
 
 .card.flip{
+    transform: rotateY(180deg);
+}
+
+.front-img{
     transform: rotateY(180deg);
 }
 
